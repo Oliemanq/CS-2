@@ -1,9 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        Book newBook = new Book("The Da Vinci Code", "Dan Brown");
+        Lab3 test = new Lab3(10);
 
-        newBook.print();
-
+        if (test == null){
+            System.out.println("Test is null");
+        }
     }
 }
 
