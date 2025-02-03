@@ -1,9 +1,22 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Lab3 test = new Lab3(10);
+        Scanner sc = new Scanner(System.in);
+        Person[] people = new Person[12];
 
-        if (test == null){
-            System.out.println("Test is null");
+        for(int i = 0; i < 12; i++){
+
+            System.out.println("Enter name: ");
+            String tempName = sc.nextLine();
+            System.out.println("Enter age: ");
+            int tempAge = sc.nextInt();
+            System.out.println("Made person");
+            people[i] = new Person(tempName, tempAge);
+
+        }
+        System.out.println("People: ");
+        for(int i = 0; i < 12; i++){
+            System.out.println(people[i].getName() + " is " + people[i].getAge() + " years old.");
         }
     }
 }
