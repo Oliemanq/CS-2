@@ -4,12 +4,20 @@ public class Weather {
     private double humidity;
     private double windSpeed;
     private boolean rain;
+
     public Weather(double tempFar, double humidity, double windSpeed, boolean rain) {
         this.tempFar = tempFar;
         this.humidity = humidity;
         this.windSpeed = windSpeed;
         this.rain = rain;
         this.tempCel = (tempFar - 32) * 5 / 9;
+    }
+    public Weather(Weather other) {
+        this.tempFar = other.tempFar;
+        this.tempCel = other.tempCel;
+        this.humidity = other.humidity;
+        this.windSpeed = other.windSpeed;
+        this.rain = other.rain;
     }
     //getters
     public double getTempFar() {
