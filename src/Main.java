@@ -9,6 +9,8 @@ public class Main {
         weathers[5] = new Weather(95, 75, 30, true);
         weathers[6] = new Weather(100, 80, 35, false);
 
+        
+
         Station station = new Station(weathers);
 
         Predictions predictions = new Predictions(station.getWeathers());

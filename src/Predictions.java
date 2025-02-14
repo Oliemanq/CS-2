@@ -1,10 +1,10 @@
 public class Predictions {
-    private final Weather[] weathersIn;
+    private Weather[] weathersIn = new Weather[7];
 
-    private double[] tempsFar;
-    private double[] humidities;
-    private double[] windSpeeds;
-    private boolean[] rains;
+    private double[] tempsFar = new double[weathersIn.length];
+    private double[] humidities = new double[weathersIn.length];
+    private double[] windSpeeds = new double[weathersIn.length];
+    private boolean[] rains = new boolean[weathersIn.length];
 
     public Predictions(Weather[] weathersIn) {
         this.weathersIn = weathersIn;
