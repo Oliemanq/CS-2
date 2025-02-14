@@ -12,13 +12,7 @@ public class Weather {
         this.rain = rain;
         this.tempCel = (tempFar - 32) * 5 / 9;
     }
-    public Weather(Weather other) {
-        this.tempFar = other.tempFar;
-        this.tempCel = other.tempCel;
-        this.humidity = other.humidity;
-        this.windSpeed = other.windSpeed;
-        this.rain = other.rain;
-    }
+
     //getters
     public double getTempFar() {
         return tempFar;
@@ -34,19 +28,5 @@ public class Weather {
     }
     public boolean getRain() {
         return rain;
-    }
-    //Setters
-    public void setTemp(double tempFar) {
-        this.tempFar = tempFar;
-        this.tempCel = (tempFar - 32) * 5 / 9;
-    }
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
-    }
-    public void setWindSpeed(double windSpeed) {
-        this.windSpeed = windSpeed;
-    }
-    public void setRain(boolean rain) {
-        this.rain = rain;
     }
 }

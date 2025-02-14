@@ -1,26 +1,19 @@
 public class Station {
-    private Weather[] weathers;
-    private Predictions[] predictions;
-    private boolean hasPredictions;
+    private final Weather[] weathers;
 
-    public Station(Weather[] weathers, Predictions[] predictions) {
+    public Station(Weather[] weathers) {
         this.weathers = weathers;
-        this.predictions = predictions;
-        this.hasPredictions = true;
     }
-    public Station(Weather[] weathers){
-        this.weathers = weathers;
-        this.hasPredictions = false;
+    public Station(){
+        this.weathers = null;
     }
+
 
     public Weather[] getWeathers() {
-        return weathers;
-    }
-    public String getWeathersString(){
-        var str = "";
-        for (Weather weather : weathers) {
-            str += (weather.getTempFar() + " " + weather.getTempCel() + " " + weather.getHumidity() + " " + weather.getWindSpeed() + " " + weather.getRain());
+        if (weathers == null) {
+            System.out.println("No weather data available.");
+            return new Weather[0];
         }
-        return str;
+        return weathers;
     }
 }
