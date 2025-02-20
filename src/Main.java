@@ -4,25 +4,30 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        double avgTime_ms = 0.0;
 
-
-        ArrayList< Integer > data = new ArrayList<>();
-
-        // First need to create a PRNG engine
-        Random prng = new Random();
-
-        // generate 1000 elements between -1000 and 1000
-        int N = 1000;
+        int N = 3;
         for (int i=0; i<N; ++i) {
-            data.add( prng.nextInt(-1000, 1000) );
+
+            long startTime = System.nanoTime();
+
+            // how long does it take to sum up 0.1 a million times?
+            float sum = 0.0F;
+            for (int j=0; j<1000000; ++j) {
+                sum += 0.000001F;
+            }
+
+            long endTime = System.nanoTime();
+            long diffTime = endTime - startTime;
+
+            System.out.println( "\tsum = " + sum );
+
+            // get the difference in milliseconds
+            avgTime_ms += diffTime / 1000000.0;
         }
 
-        Collections.sort( data );
-
-        System.out.println("Amount of elements: " + data.size() );
-        for ( Integer n : data ) {
-            System.out.println( "Item: " + n );
-        }
+        avgTime_ms = avgTime_ms / (float)N;
+        System.out.println( "Average time: " + avgTime_ms + " ms" );
 
     }
 }
